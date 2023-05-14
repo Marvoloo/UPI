@@ -26,11 +26,79 @@ namespace Task_2_6_Suchkov
         {
             path = Path_box.Text;
             if (String.IsNullOrEmpty(path))
-                path = "C:\\Data.txt";
+                path = "./Data.txt";
+            if (file_checker(path) == 0)
+            {
+                MessageBox.Show("Ошибка строения файла!\n");
+                return;
+            }
             Students st = new Students(path);
             Data[] students = st.get_students();
             printTable_first(students, st.size);
             printTable_second(students, st.size);
+        }
+        private int students_checker(string[] file, int index)
+        {
+            int counter = 0;
+            for (int i = index + 1; i < file.Length; i++)
+            {
+                if (file[i] == "[")
+                    break;
+                counter++;
+            }
+            if (counter == 4)
+                return (1);
+            return (0);
+        }
+        private int subject_checker(string[] file, int index)
+        {
+            int counter = 0;
+            for (int i = index + 1; i < file.Length; i++)
+            {
+                if (file[i] == "]")
+                    break;
+                counter++;
+            }
+            if (counter == 6)
+                return (1);
+            return (0);
+        }
+        private int file_checker(string path)
+        {
+            int counter_11 = 0;
+            int counter_12 = 0;
+            int counter_21 = 0;
+            int counter_22 = 0;
+            int subj_counter = 0;
+            string[] file = File.ReadAllLines(path);
+            for (int i = 0; i < file.Length; i++)
+            {
+                if (file[i] == "{")
+                {
+                    subj_counter = 0;
+                    counter_11++;
+                    if (students_checker(file, i) == 0)
+                        return (0);
+                }
+                if (file[i] == "}")
+                {
+                    if (subj_counter < 3 || subj_counter > 5)
+                        return (0);
+                    counter_12++;
+                }
+                if (file[i] == "[")
+                {
+                    subj_counter++;
+                    counter_21++;
+                    if (subject_checker(file, i) == 0)
+                        return (0);
+                }
+                if (file[i] == "]")
+                    counter_22++;
+            }
+            if (counter_11 != counter_12 || counter_21 != counter_22)
+                return (0);
+            return (1);
         }
         private void print_Rows(DataTable dt, Data[] students, int i)
         {

@@ -15,12 +15,12 @@ namespace students
         private Students() { }
         public Students(string path)
         {
-            int len = get_size_of_file(path);
-            students = new Data[len];
-            for (int i = 0; i < len; i++)
-                students[i] = new Data();
-            //MessageBox.Show(positions.Count.ToString());
-            parse_file(path);
+                int len = get_size_of_file(path);
+                students = new Data[len];
+                for (int i = 0; i < len; i++)
+                    students[i] = new Data();
+                //MessageBox.Show(positions.Count.ToString());
+                parse_file(path);
         }
         // Return count of studnets
         private int get_size_of_file(string path)
