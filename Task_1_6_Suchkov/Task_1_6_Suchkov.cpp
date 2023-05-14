@@ -1,20 +1,74 @@
-﻿// Task_1_6_Suchkov.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <string>
 
-#include <iostream>
+void print_max_len()
+{
+    std::string first;
+    std::string second;
+    int first_value;
+    int second_value;
+    int len1 = 0;
+    int len2 = 0;
+    long long fval;
+    long long sval;
+    std::cout << "Введите первое число в предалх +-INT_MAX\n";
+    std::cin >> first;
+    try {
+        first_value = stoi(first);
+    }
+    catch (...)
+    {
+        std::cout << "Ошибка при вводе числа! Попробуйте еще раз.\n";
+        return ;
+    }
+    std::cout << "Введите второе число в предалх +-INT_MAX\n";
+    std::cin >> second;
+    try {
+        second_value = stoi(second);
+    }
+    catch (...)
+    {
+        std::cout << "Ошибка при вводе числа! Попробуйте еще раз.\n";
+        return;
+    }
+    if (second_value < 0)
+        sval = -second_value;
+    else
+        sval = second_value;
+    if (first_value < 0)
+        fval = -first_value;
+    else
+        fval = first_value;
+    while (fval > 0)
+    {
+        len1++;
+        fval = fval / 10;
+    }
+    while (sval > 0)
+    {
+        len2++;
+        sval = sval / 10;
+    }
+    if (len1 > len2)
+        std::cout << "Число " << first_value << " имеет больше знаков (" << len1 << ") чем число " << second_value << " (" << len2 << ").\n";
+    else if (len1 != len2)
+        std::cout << "Число " << second_value << " имеет больше знаков (" << len2 << ") чем число " << first_value << " (" << len1 << ").\n";
+    else
+        std::cout << "Число " << first_value << " имеет столько же знаков (" << len1 << "), что и число " << second_value << " (" << len2 << ").\n";
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    setlocale(LC_ALL, "Russian");
+    std::string str;
+    while (1)
+    {
+        print_max_len();
+        std::cout << "Желаете продолжить? \"n\" - отмена, остальное - продолжить.\n";
+        std::cin >> str;
+        if (str == "n")
+            return (0);
+    }
+    return (0);
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.

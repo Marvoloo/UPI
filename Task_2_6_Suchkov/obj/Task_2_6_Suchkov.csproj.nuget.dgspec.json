@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Учеба\\2 семестр\\UPI1\\Task_2_6_Suchkov\\Task_2_6_Suchkov.csproj": {}
+    "C:\\Учеба\\2 семестр\\UPI\\Task_2_6_Suchkov\\Task_2_6_Suchkov.csproj": {}
   },
   "projects": {
-    "C:\\Учеба\\2 семестр\\UPI1\\Task_2_6_Suchkov\\Task_2_6_Suchkov.csproj": {
+    "C:\\Учеба\\2 семестр\\UPI\\Task_2_6_Suchkov\\Task_2_6_Suchkov.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Учеба\\2 семестр\\UPI1\\Task_2_6_Suchkov\\Task_2_6_Suchkov.csproj",
+        "projectUniqueName": "C:\\Учеба\\2 семестр\\UPI\\Task_2_6_Suchkov\\Task_2_6_Suchkov.csproj",
         "projectName": "Task_2_6_Suchkov",
-        "projectPath": "C:\\Учеба\\2 семестр\\UPI1\\Task_2_6_Suchkov\\Task_2_6_Suchkov.csproj",
+        "projectPath": "C:\\Учеба\\2 семестр\\UPI\\Task_2_6_Suchkov\\Task_2_6_Suchkov.csproj",
         "packagesPath": "C:\\Users\\rusuc\\.nuget\\packages\\",
-        "outputPath": "C:\\Учеба\\2 семестр\\UPI1\\Task_2_6_Suchkov\\obj\\",
+        "outputPath": "C:\\Учеба\\2 семестр\\UPI\\Task_2_6_Suchkov\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rusuc\\AppData\\Roaming\\NuGet\\NuGet.Config",
